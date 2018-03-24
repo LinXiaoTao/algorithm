@@ -1,5 +1,7 @@
 package com.leo.sort;
 
+import com.leo.utils.Utils;
+
 /**
  * 选择排序
  * 时间复杂度：O(n^2)
@@ -13,29 +15,22 @@ final class SelectSort {
 
     static void sort(int[] data) {
 
-        if (data == null || data.length <= 0) {
+        if (Utils.isEmpty(data)) {
             return;
         }
 
-
-        for (int i = 0; i < data.length; i++) {
-
-            int k = i;
-
-            for (int j = data.length - 1; j > i; j--) {
-
-                if (data[j] < data[k]) {
-                    k = j;
+        for (int i = 0; i < data.length - 1; i++) {
+            int min = i;
+            // 遍历找到最小值的下标
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[j] < data[min]) {
+                    min = j;
                 }
-
             }
-
-            final int temp = data[i];
-            data[i] = data[k];
-            data[k] = temp;
-
+            if (min != i) {
+                Utils.swap(data, min, i);
+            }
         }
-
     }
 
 }

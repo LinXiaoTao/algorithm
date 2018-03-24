@@ -1,5 +1,7 @@
 package com.leo.sort;
 
+import com.leo.utils.Utils;
+
 /**
  * 快速排序
  * 时间复杂度：O(n log(n))
@@ -13,7 +15,7 @@ final class QuickSort {
 
     static void sort(int[] data) {
 
-        if (data == null || data.length <= 0) {
+        if (Utils.isEmpty(data)) {
             return;
         }
 
@@ -41,7 +43,7 @@ final class QuickSort {
         int temp = data[low];
         while (low < high) {
 
-            while (low < high && data[high] >= temp) {
+             while (low < high && data[high] >= temp) {
                 high--;
             }
 

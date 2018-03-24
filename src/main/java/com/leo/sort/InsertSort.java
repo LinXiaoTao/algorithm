@@ -1,7 +1,10 @@
 package com.leo.sort;
 
+import com.leo.utils.Utils;
+
 /**
- * 选择排序
+ * 插入排序
+ * 假设前 n - 1 个数已经排序好，比较第 n 个数，按顺序插入
  * 时间复杂度：O(n^2)
  * Created on 2018/3/7 下午1:35.
  * leo linxiaotao1993@vip.qq.com
@@ -9,28 +12,20 @@ package com.leo.sort;
 
 final class InsertSort {
 
-
     static void sort(int[] data) {
 
-        if (data == null || data.length <= 0) {
+        if (Utils.isEmpty(data)) {
             return;
         }
-
-        for (int i = 0; i < data.length; i++) {
-
-            // 选择一个元素
-            final int temp = data[i];
-            int j;
-            for (j = i; j > 0 && temp < data[j - 1]; j--) {
-                // 与前一位置的元素进行比较，比当前元素大于或等于，向后移动
-                data[j] = data[j - 1];
+        for (int i = 0; i < data.length - 1; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (data[j] < data[j - 1]) {
+                    Utils.swap(data, j, j - 1);
+                } else {
+                    break;
+                }
             }
-
-            //直到前一位置元素比当前元素小，插入在当前移动到的位置
-            data[j] = temp;
         }
-
-
     }
 
 }

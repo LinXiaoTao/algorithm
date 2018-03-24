@@ -1,5 +1,7 @@
 package com.leo.sort;
 
+import com.leo.utils.Utils;
+
 /**
  * 冒泡排序
  * 时间复杂度：O(n^2)
@@ -14,28 +16,28 @@ final class BubbleSort {
 
     static void sort(int[] data) {
 
-
-        if (data == null || data.length <= 0) {
+        if (Utils.isEmpty(data)){
             return;
         }
 
-        for (int i = 0; i < data.length - 1; i++) {
-            for (int j = 0; j < data.length - 1 - i; j++) {
+        // 是否发生交换
+        boolean swap;
 
+        for (int i = 0; i < data.length - 1; i++) {
+            swap = false;
+            for (int j = 0; j < data.length - 1 - i; j++) {
                 // 将较小的元素慢慢排列到前端
                 // 最后面的元素就是最大的
                 if (data[j + 1] < data[j]) {
-
-                    final int temp = data[j + 1];
-                    data[j + 1] = data[j];
-                    data[j] = temp;
-
+                    Utils.swap(data,j,j + 1);
+                    swap = true;
                 }
+            }
 
+            if (!swap) {
+                break;
             }
         }
-
-
     }
 
 
