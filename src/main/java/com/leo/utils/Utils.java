@@ -6,6 +6,10 @@ package com.leo.utils;
  */
 public final class Utils {
 
+    private Utils() {
+
+    }
+
     public static boolean isEmpty(int[] data) {
         if (data == null || data.length <= 0) {
             return true;
