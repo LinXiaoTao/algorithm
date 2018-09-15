@@ -1,4 +1,4 @@
-package com.leo;
+package com.leo.linkedlist;
 
 import org.junit.Assert;
 import org.junit.Test;

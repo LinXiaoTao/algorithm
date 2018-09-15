@@ -1,4 +1,4 @@
-package com.leo;
+package com.leo.linkedlist;
 
 /**
  * 链表反转

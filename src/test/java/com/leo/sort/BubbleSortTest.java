@@ -23,7 +23,7 @@ public class BubbleSortTest {
 
         final int[] result = {3, 4, 5, 6, 8};
 
-        Assert.assertEquals(Arrays.equals(source,result),true);
+        Assert.assertTrue(Arrays.equals(source, result));
 
     }
 

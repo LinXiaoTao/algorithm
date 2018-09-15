@@ -4,7 +4,7 @@ import com.leo.utils.Utils;
 
 /**
  * 快速排序
- * 时间复杂度：O(n log(n))
+ * 时间复杂度：O(n * log(n))
  * 通过取第一个值作为标准，将待排序记录分割成独立的两部分，其中一部分记录的关键字均比另一部分关键字小，则分别对这两部分继续进行排序，直到整个序列有序。
  * Created on 2018/3/7 上午11:57.
  * leo linxiaotao1993@vip.qq.com
@@ -23,14 +23,12 @@ final class QuickSort {
 
     }
 
-    private static void innerSort(int[] data, int low, int high) {
+    private static void innerSort(int[] data, int left, int right) {
 
-        if (low < high) {
-
-            int middle = getMiddle(data, low, high);
-            innerSort(data, low, middle - 1);
-            innerSort(data, middle + 1, high);
-
+        if (left < right) {
+            int middle = getMiddle(data, left, right);
+            innerSort(data, left, middle - 1);
+            innerSort(data, middle + 1, right);
         }
 
     }
@@ -38,29 +36,24 @@ final class QuickSort {
     /**
      * 获取中轴
      */
-    private static int getMiddle(int[] data, int low, int high) {
+    private static int getMiddle(int[] data, int left, int right) {
 
-        int temp = data[low];
-        while (low < high) {
+        int temp = data[left];
 
-             while (low < high && data[high] >= temp) {
-                high--;
-            }
+        while (left < right) {
 
-            data[low] = data[high];
+            while (left < right && data[right] > temp) right--;
 
-            while (low < high && data[low] < temp) {
-                low++;
-            }
+            if (left < right) data[left] = data[right];
 
+            while (left < right && data[left] <= temp) left++;
 
-            data[high] = data[low];
-
+            if (left < right) data[right] = data[left];
         }
 
-        data[low] = temp;
+        data[left] = temp;
 
-        return low;
+        return left;
 
     }
 
