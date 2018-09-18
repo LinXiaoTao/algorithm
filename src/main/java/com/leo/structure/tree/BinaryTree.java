@@ -102,16 +102,8 @@ public class BinaryTree<T> {
         // 零表示根节点
         if (index == 0) {
             return null;
-        } else if (index == 1 || index == 2) {
-            return data.get(0);
         }
-        if ((index & 1) == 1) {
-            // 奇数
-            return data.get((int) (Math.log(index - 1) / Math.log(2)));
-        } else {
-            // 偶数
-            return data.get((int) (Math.log(index - 2) / Math.log(2)));
-        }
+        return data.get((int) Math.floor((index - 1) / 2));
     }
 
     /**
