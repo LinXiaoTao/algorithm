@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @see <a href="https://leetcode-cn.com/problems/two-sum/description/">two-sum</a>
+ * https://leetcode-cn.com/problems/two-sum/description/
  */
-public class TwoSum {
+public class T1 {
 
     static int[] twoSum(int[] nums, int target) {
         final Map<Integer, String> map = new HashMap<>(nums.length);
