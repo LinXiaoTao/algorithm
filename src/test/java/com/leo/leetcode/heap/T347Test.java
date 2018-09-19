@@ -1,9 +1,8 @@
-package com.leo.leetcode;
+package com.leo.leetcode.heap;
 
+import com.leo.leetcode.heap.T347;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class T347Test {
 
