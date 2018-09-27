@@ -1,4 +1,4 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.hash;
 
 import java.util.*;
 
