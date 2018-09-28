@@ -1,5 +1,7 @@
 package com.leo.guide.part1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -10,40 +12,38 @@ import java.util.Stack;
  */
 public class GetMinStack<E extends Comparable<E>> {
 
-    private final Stack<E> minStack = new Stack<>();
-    private final Stack<E> dataStack = new Stack<>();
+    private final List<Integer> minStack = new ArrayList<>();
+    private final List<E> dataStack = new ArrayList<>();
 
     public E getMin() {
-        if (minStack.empty()) {
-            return null;
+        if (minStack.isEmpty() || dataStack.isEmpty()) {
+            throw new IllegalStateException("stack is empty");
         }
-        return minStack.peek();
+        return dataStack.get(minStack.get(minStack.size() - 1));
     }
 
     public void push(E data) {
 
-        dataStack.push(data);
-        if (minStack.empty()) {
-            minStack.push(data);
-        } else if (data.compareTo(minStack.peek()) <= 0) {
-            // 小于或等于
-            minStack.push(data);
-        } else {
-            // 复制栈顶元素入栈
-            minStack.push(minStack.peek());
+        dataStack.add(data);
+        if (minStack.isEmpty()) {
+            minStack.add(dataStack.size() - 1);
+        } else if (data.compareTo(dataStack.get(minStack.get(minStack.size() - 1))) < 0) {
+            // 小于
+            minStack.add(dataStack.size() - 1);
         }
     }
 
     public E pop() {
-        minStack.pop();
-        return dataStack.pop();
+        if (dataStack.isEmpty()) {
+            throw new IllegalStateException("stack is empty");
+        }
+        if (!minStack.isEmpty()) {
+            if (minStack.get(minStack.size() - 1) == dataStack.size() - 1){
+                minStack.remove(minStack.size() - 1);
+            }
+        }
+        return dataStack.remove(dataStack.size() - 1);
     }
 
-    Stack<E> getMinStack() {
-        return minStack;
-    }
 
-    Stack<E> getDataStack() {
-        return dataStack;
-    }
 }
