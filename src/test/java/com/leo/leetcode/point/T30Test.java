@@ -14,6 +14,8 @@ public class T30Test {
         T30 t30 = new T30();
 
         Assert.assertEquals(Arrays.asList(0, 9), t30.findSubstring("barfoothefoobarman", new String[]{"foo", "bar"}));
+        Assert.assertEquals(Arrays.asList(), t30.findSubstring("wordgoodstudentgoodword", new String[]{"word", "student"}));
+
 
     }
 }
