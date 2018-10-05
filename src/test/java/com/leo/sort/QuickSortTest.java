@@ -22,7 +22,22 @@ public class QuickSortTest {
 
         final int[] result = {3, 4, 5, 6, 8};
 
-        Assert.assertEquals(Arrays.equals(source, result), true);
+        Assert.assertTrue(Arrays.equals(source, result));
+
+    }
+
+    @Test
+    public void testQuickSort1() {
+
+        final int[] source = {5, 3, 8, 3, 1, 6, 4, 2, 7};
+
+        QuickSort.sort(source);
+
+        System.out.println("sort result: " + Arrays.toString(source));
+
+        final int[] result = {1, 2, 3, 3, 4, 5, 6, 7, 8};
+
+        Assert.assertTrue(Arrays.equals(source, result));
 
     }
 
