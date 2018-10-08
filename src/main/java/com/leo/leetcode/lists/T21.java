@@ -1,5 +1,7 @@
 package com.leo.leetcode.lists;
 
+import com.leo.leetcode.builtin.ListNode;
+
 /**
  * 21. 合并两个有序链表
  * https://leetcode-cn.com/problems/merge-two-sorted-lists/description/
@@ -53,13 +55,6 @@ public class T21 {
         return head;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
 }

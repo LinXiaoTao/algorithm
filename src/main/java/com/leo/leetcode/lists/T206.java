@@ -2,6 +2,7 @@ package com.leo.leetcode.lists;
 
 
 import com.leo.guide.part2.Node;
+import com.leo.leetcode.builtin.ListNode;
 
 /**
  * 206. 反转链表
@@ -23,12 +24,5 @@ public class T206 {
         return next;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

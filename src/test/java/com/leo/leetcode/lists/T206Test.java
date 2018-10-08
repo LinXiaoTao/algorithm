@@ -1,5 +1,6 @@
 package com.leo.leetcode.lists;
 
+import com.leo.leetcode.builtin.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,12 +11,12 @@ public class T206Test {
     @Test
     public void reverseList() {
         T206 t206 = new T206();
-        T206.ListNode head = new T206.ListNode(1);
-        head.next = new T206.ListNode(2);
-        head.next.next = new T206.ListNode(3);
-        head.next.next.next = new T206.ListNode(4);
-        head.next.next.next.next = new T206.ListNode(5);
-        T206.ListNode newHead = t206.reverseList(head);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+        ListNode newHead = t206.reverseList(head);
         Assert.assertEquals(
                 5, newHead.val
         );

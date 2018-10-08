@@ -1,5 +1,6 @@
 package com.leo.leetcode.lists;
 
+import com.leo.leetcode.builtin.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,15 +11,15 @@ public class T21Test {
     @Test
     public void mergeTwoLists() {
         T21 t21 = new T21();
-        T21.ListNode l1 = new T21.ListNode(1);
-        l1.next = new T21.ListNode(2);
-        l1.next.next = new T21.ListNode(4);
+        ListNode l1 = new ListNode(1);
+        l1.next = new ListNode(2);
+        l1.next.next = new ListNode(4);
 
-        T21.ListNode l2 = new T21.ListNode(1);
-        l2.next = new T21.ListNode(3);
-        l2.next.next = new T21.ListNode(4);
+        ListNode l2 = new ListNode(1);
+        l2.next = new ListNode(3);
+        l2.next.next = new ListNode(4);
 
-        T21.ListNode result = t21.mergeTwoLists(
+        ListNode result = t21.mergeTwoLists(
                 l1,
                 l2
         );
@@ -63,10 +64,10 @@ public class T21Test {
     public void mergeTwoLists1() {
         T21 t21 = new T21();
 
-        T21.ListNode l2 = new T21.ListNode(0);
+        ListNode l2 = new ListNode(0);
 
 
-        T21.ListNode result = t21.mergeTwoLists(
+        ListNode result = t21.mergeTwoLists(
                 null,
                 l2
         );

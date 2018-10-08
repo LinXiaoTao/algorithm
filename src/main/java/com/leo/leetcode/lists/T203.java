@@ -1,5 +1,7 @@
 package com.leo.leetcode.lists;
 
+import com.leo.leetcode.builtin.ListNode;
+
 /**
  * 203. 删除链表中的节点
  * https://leetcode-cn.com/problems/remove-linked-list-elements/description/
@@ -23,13 +25,6 @@ public class T203 {
         return node.next;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
 }

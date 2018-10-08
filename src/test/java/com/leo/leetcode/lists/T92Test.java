@@ -1,5 +1,6 @@
 package com.leo.leetcode.lists;
 
+import com.leo.leetcode.builtin.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,11 +13,11 @@ public class T92Test {
 
         T92 t92 = new T92();
         //1,2,3,4,5
-        T92.ListNode head = new T92.ListNode(1);
-        head.next = new T92.ListNode(2);
-        head.next.next = new T92.ListNode(3);
-        head.next.next.next = new T92.ListNode(4);
-        head.next.next.next.next = new T92.ListNode(5);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
 
         head = t92.reverseBetween1(head, 2, 4);
 

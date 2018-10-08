@@ -1,5 +1,7 @@
 package com.leo.leetcode.lists;
 
+import com.leo.leetcode.builtin.ListNode;
+
 /**
  * 92. 反转链表 II
  * https://leetcode-cn.com/problems/reverse-linked-list-ii/description/
@@ -56,12 +58,5 @@ public class T92 {
         return preNode != null ? head : node1;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }
