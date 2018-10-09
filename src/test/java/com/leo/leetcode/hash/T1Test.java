@@ -1,9 +1,8 @@
-package com.leo.leetcode;
+package com.leo.leetcode.hash;
 
+import com.leo.leetcode.map.T1;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
 
 public class T1Test {
 
