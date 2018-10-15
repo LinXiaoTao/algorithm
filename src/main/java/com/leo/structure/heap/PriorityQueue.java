@@ -1,9 +1,6 @@
 package com.leo.structure.heap;
 
-import com.leo.structure.tree.BinaryTree;
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
