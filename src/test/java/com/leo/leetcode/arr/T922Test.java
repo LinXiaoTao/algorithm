@@ -1,6 +1,5 @@
 package com.leo.leetcode.arr;
 
-import com.leo.leetcode.arr.T922;
 import org.junit.Assert;
 import org.junit.Test;
 
