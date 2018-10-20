@@ -7,6 +7,7 @@ package com.leo.leetcode.dp;
 public class T96 {
 
     public int numTrees(int n) {
+        // dp[i] 表示 [1,i] 组成多少个子树
         int[] dp = new int[n + 1];
         // 空树也是搜索树
         dp[0] = 1;

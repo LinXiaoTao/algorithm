@@ -4,7 +4,8 @@ package com.leo.leetcode.dp;
  * 198. 打家劫舍
  * https://leetcode-cn.com/problems/house-robber/description/
  */
-public class T198 {
+public class
+T198 {
 
     public int rob(int[] nums) {
         if (nums.length == 0) {
