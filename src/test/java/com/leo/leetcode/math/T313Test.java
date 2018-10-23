@@ -1,6 +1,5 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.math;
 
-import com.leo.leetcode.ohter.T313;
 import org.junit.Assert;
 import org.junit.Test;
 

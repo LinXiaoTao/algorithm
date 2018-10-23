@@ -1,9 +1,8 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.math;
 
+import com.leo.leetcode.math.T263;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class T263Test {
 

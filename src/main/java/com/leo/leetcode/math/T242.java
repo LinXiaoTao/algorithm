@@ -1,10 +1,10 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.math;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 242. 有效的字母异位词
  * https://leetcode-cn.com/problems/valid-anagram/description/
  */
 public class T242 {

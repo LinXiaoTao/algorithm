@@ -1,9 +1,7 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.math;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class T242Test {
 

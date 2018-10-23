@@ -1,8 +1,9 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.math;
 
 import java.util.*;
 
 /**
+ * 313. 超级丑数
  * https://leetcode-cn.com/problems/super-ugly-number/description/
  */
 public class T313 {

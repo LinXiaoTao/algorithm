@@ -1,8 +1,7 @@
-package com.leo.leetcode.ohter;
-
-import java.util.Arrays;
+package com.leo.leetcode.math;
 
 /**
+ * 264. 丑数 II
  * https://leetcode-cn.com/problems/ugly-number-ii/description/
  */
 public class T264 {
@@ -15,7 +14,6 @@ public class T264 {
         result[0] = 1;
         int count = 1;
         int[] indexCount = new int[primes.length];
-        Arrays.fill(indexCount, 0);
         while (count < n) {
             int min = Integer.MAX_VALUE;
             for (int i = 0; i < primes.length; i++) {

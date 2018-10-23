@@ -1,6 +1,7 @@
-package com.leo.leetcode.ohter;
+package com.leo.leetcode.math;
 
 /**
+ * 263. 丑数
  * https://leetcode-cn.com/problems/ugly-number/description/
  */
 public class T263 {
