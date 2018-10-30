@@ -20,15 +20,13 @@ final class BubbleSort {
             return;
         }
 
-        int right = data.length - 1;
-
         // 是否发生交换
         boolean swap;
 
         // 最多循环次数 (length - 1) 次
-        for (int i = 0; i < right; i++) {
+        for (int i = 0; i < data.length - 1; i++) {
             swap = false;
-            for (int j = 0; j < (right - i); j++) {
+            for (int j = 0; j < (data.length - 1 - i); j++) {
                 // 将较小的元素慢慢排列到前端
                 // 最后面的元素就是最大的
                 if (data[j] > data[j + 1]) {
