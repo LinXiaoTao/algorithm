@@ -1,10 +1,9 @@
-package com.leo.leetcode.dft;
+package com.leo.leetcode.tree;
 
 import com.leo.leetcode.builtin.TreeNode;
+import com.leo.leetcode.tree.T108;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class T108Test {
 

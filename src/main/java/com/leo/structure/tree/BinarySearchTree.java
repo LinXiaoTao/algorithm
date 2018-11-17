@@ -78,32 +78,52 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
             if (next.leftNode == null && next.rightNode == null) {
                 // 叶子节点，直接删除
-                if (next.parentNode.leftNode == next) {
-                    next.parentNode.leftNode = null;
+                if (next.parentNode == null) {
+                    root = null;
                 } else {
-                    next.parentNode.rightNode = null;
+                    if (next.parentNode.leftNode == next) {
+                        next.parentNode.leftNode = null;
+                    } else {
+                        next.parentNode.rightNode = null;
+                    }
                 }
             } else if (next.leftNode != null && next.rightNode != null) {
                 // 存在两个子节点
                 // 左子节点的最大值
-                TreeNode<T> rightNode = next.leftNode;
-                while (rightNode.rightNode != null) {
-                    rightNode = rightNode.rightNode;
+                TreeNode<T> leftNode = next.rightNode;
+                while (leftNode.leftNode != null) {
+                    leftNode = leftNode.leftNode;
                 }
                 // rightNode.rightNode == null
-                next.value = rightNode.value;
-                if (rightNode.parentNode == next) {
+                next.value = leftNode.value;
+                if (leftNode.parentNode == next) {
                     // 没有存在最大值
-                    next.leftNode = rightNode.leftNode;
+                    next.rightNode = leftNode.rightNode;
                 } else {
-                    next.parentNode.rightNode = next.leftNode;
+                    leftNode.parentNode.leftNode = leftNode.rightNode;
                 }
             } else {
                 // 只存在一个子节点
                 if (next.leftNode != null) {
-                    next.parentNode.leftNode = next.leftNode;
+                    if (next.parentNode == null) {
+                        root = next.leftNode;
+                    } else {
+                        if (next.parentNode.leftNode == next) {
+                            next.parentNode.leftNode = next.leftNode;
+                        } else {
+                            next.parentNode.rightNode = next.leftNode;
+                        }
+                    }
                 } else {
-                    next.parentNode.rightNode = next.rightNode;
+                    if (next.parentNode == null){
+                        root = next.rightNode;
+                    }else {
+                        if (next.parentNode.leftNode == next) {
+                            next.parentNode.leftNode = next.rightNode;
+                        } else {
+                            next.parentNode.rightNode = next.rightNode;
+                        }
+                    }
                 }
             }
 

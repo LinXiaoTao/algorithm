@@ -1,4 +1,4 @@
-package com.leo.leetcode.dft;
+package com.leo.leetcode.tree;
 
 import com.leo.leetcode.builtin.TreeNode;
 
