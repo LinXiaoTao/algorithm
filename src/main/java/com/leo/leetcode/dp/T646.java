@@ -46,9 +46,7 @@ public class T646 {
         if (pairs.length == 1) {
             return 1;
         }
-        long start = System.currentTimeMillis();
         Arrays.sort(pairs, (o1, o2) -> o1[1] - o2[1]);
-        System.out.println("排序耗时：" + (System.currentTimeMillis() - start));
         int count = 1;
         int foot = pairs[0][1];
         for (int i = 1; i < pairs.length; i++) {
@@ -67,9 +65,7 @@ public class T646 {
         if (pairs.length == 1) {
             return 1;
         }
-        long start = System.currentTimeMillis();
         quickSort(pairs, 0, pairs.length - 1);
-        System.out.println("排序耗时：" + (System.currentTimeMillis() - start));
         int count = 1;
         int foot = pairs[0][1];
         for (int i = 1; i < pairs.length; i++) {
