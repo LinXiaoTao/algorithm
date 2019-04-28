@@ -1,8 +1,6 @@
 package com.leo.tree.rbt;
 
 
-import com.sun.istack.internal.Nullable;
-
 import javax.validation.constraints.NotNull;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -479,7 +477,6 @@ public final class RBTree<T extends Comparable<T>> {
      * @param node 节点
      * @return 叔父节点
      */
-    @Nullable
     private RBTreeNode<T> getUncleNode(RBTreeNode<T> node) {
 
 
@@ -504,7 +501,6 @@ public final class RBTree<T extends Comparable<T>> {
      * @param node 节点
      * @return 祖父节点
      */
-    @Nullable
     private RBTreeNode<T> getGrandParentNode(RBTreeNode<T> node) {
 
         if (node.getParent() == null) {
@@ -521,7 +517,6 @@ public final class RBTree<T extends Comparable<T>> {
      * @param node 节点
      * @return 兄弟节点
      */
-    @Nullable
     private RBTreeNode<T> getSiblingNode(RBTreeNode<T> node) {
 
         if (node.getParent() == null) {
@@ -541,7 +536,7 @@ public final class RBTree<T extends Comparable<T>> {
      *
      * @param node 支点节点
      */
-    private void leftRotate(@NotNull RBTreeNode<T> node) {
+    private void leftRotate(RBTreeNode<T> node) {
 
         final RBTreeNode<T> right = node.getRight();
         if (right == null) {
