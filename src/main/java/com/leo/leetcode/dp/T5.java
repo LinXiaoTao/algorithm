@@ -55,4 +55,53 @@ public class T5 {
         }
     }
 
+    public String longestPalindrome3(String s) {
+        if (s.length() < 2) {
+            return s;
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append("#");
+        for (int i = 0; i < s.length(); i++) {
+            builder.append(s, i, i + 1);
+            builder.append("#");
+        }
+        s = builder.toString();
+        int[] dp = new int[s.length()];
+        builder.delete(0, builder.length());
+
+        int maxRight = 0;
+        int maxLen = 0;
+        int pos = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            if (i < maxRight) {
+                dp[i] = Math.min(dp[2 * pos - i], maxRight - i + 1);
+            } else {
+                dp[i] = 1;
+            }
+
+            while (i + dp[i] < s.length() && i - dp[i] >= 0 && s.charAt(i + dp[i]) == s.charAt(i - dp[i])) {
+                dp[i] += 1;
+            }
+
+            if (i + dp[i] - 1 > maxRight) {
+                maxRight = i + dp[i] - 1;
+                pos = i;
+            }
+
+            maxLen = Math.max(maxLen, dp[i]);
+            if (maxLen == dp[i]) {
+                if (builder.length() > 0) {
+                    builder.delete(0, builder.length());
+                }
+                builder.append(s, i - dp[i] + 1, i + dp[i]);
+            }
+
+        }
+
+        return builder.toString().replace("#", "");
+
+    }
+
 }
