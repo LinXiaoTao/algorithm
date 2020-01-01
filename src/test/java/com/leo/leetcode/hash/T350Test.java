@@ -14,15 +14,23 @@ public class T350Test {
         int[] num2 = new int[]{2, 2};
         Assert.assertArrayEquals(new int[]{2, 2}, t350.intersect(num1, num2));
 
+        num1 = new int[]{4, 9, 5};
+        num2 = new int[]{9, 4, 9, 8, 4};
+        Assert.assertArrayEquals(new int[]{9, 4}, t350.intersect(num1, num2));
+
     }
 
     @Test
     public void intersection1() {
 
         T350 t350 = new T350();
-        int[] num1 = new int[]{4, 9, 5};
-        int[] num2 = new int[]{9, 4, 9, 8, 4};
-        Assert.assertArrayEquals(new int[]{9, 4}, t350.intersect(num1, num2));
+        int[] num1 = new int[]{1, 2, 2, 1};
+        int[] num2 = new int[]{2, 2};
+        Assert.assertArrayEquals(new int[]{2, 2}, t350.intersect1(num1, num2));
+
+        num1 = new int[]{4, 9, 5};
+        num2 = new int[]{9, 4, 9, 8, 4};
+        Assert.assertArrayEquals(new int[]{4, 9}, t350.intersect1(num1, num2));
 
     }
 }

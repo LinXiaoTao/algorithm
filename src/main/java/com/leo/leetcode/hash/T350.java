@@ -1,9 +1,6 @@
 package com.leo.leetcode.hash;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/description/
@@ -30,5 +27,33 @@ public class T350 {
             }
         }
         return result.stream().mapToInt(Integer::intValue).toArray();
+    }
+
+    public int[] intersect1(int[] nums1, int[] nums2) {
+
+        if (nums1.length == 0 || nums2.length == 0) return new int[0];
+
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+
+        int k = 0;
+        int i = 0;
+        int j = 0;
+
+
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                nums1[k++] = nums1[i];
+                i++;
+                j++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
+            } else {
+                i++;
+            }
+        }
+
+        return Arrays.copyOfRange(nums1, 0, k);
     }
 }

@@ -62,4 +62,49 @@ public class T347 {
         }
         keyData.set(index, key);
     }
+
+    public List<Integer> topKFrequent1(int[] nums, int k) {
+
+        List<Integer> result = new ArrayList<>(k);
+
+        Map<Integer,Integer> map = new HashMap<>();
+        for (int num : nums) {
+
+            Integer count = map.get(num);
+            if(count == null){
+                count = 0;
+            }
+            count++;
+            map.put(num,count);
+
+        }
+
+        PriorityQueue<Integer> queue = new PriorityQueue<>(k,new Comparator<Integer>() {
+
+            public int compare(Integer x,Integer y){
+                return map.get(x) - map.get(y);
+            }
+
+        });
+
+        Set<Integer> keys = map.keySet();
+        for(int key : keys){
+
+            int count = map.get(key);
+            if(queue.size() < k){
+                queue.offer(key);
+            }else if(map.get(queue.peek()) < count){
+                queue.poll();
+                queue.offer(key);
+            }
+
+        }
+
+        for (int i = 0; i< k; i++){
+            result.add(queue.poll());
+        }
+
+        return result;
+
+    }
 }

@@ -23,5 +23,24 @@ public class T206 {
         return next;
     }
 
+    public ListNode reverseList1(ListNode head) {
+        ListNode next = head.next;
+        if (next == null) return head;
+        while (next.next != null) {
+            next = next.next;
+        }
+        internelReverse(head);
+        head.next = null;
+        return next;
+    }
+
+    private ListNode internelReverse(ListNode head) {
+        ListNode next = head.next;
+        if (next != null) {
+            internelReverse(next).next = head;
+        }
+        return head;
+    }
+
 
 }
