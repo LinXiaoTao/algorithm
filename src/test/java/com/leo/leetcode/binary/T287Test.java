@@ -3,6 +3,9 @@ package com.leo.leetcode.binary;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 import static org.junit.Assert.*;
 
 public class T287Test {
@@ -31,5 +34,19 @@ public class T287Test {
                 3,
                 t287.findDuplicate1(new int[]{3, 1, 3, 4, 2})
         );
+    }
+
+    @Test
+    public void findDuplicate2() {
+        T287 t287 = new T287();
+        Assert.assertEquals(
+                2,
+                t287.findDuplicate2(new int[]{1, 3, 4, 2, 2})
+        );
+        Assert.assertEquals(
+                3,
+                t287.findDuplicate2(new int[]{3, 1, 3, 4, 2})
+        );
+
     }
 }

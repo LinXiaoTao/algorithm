@@ -13,6 +13,17 @@ public class T237 {
         node.next = node.next.next;
     }
 
+    public void deleteNode1(ListNode node) {
+        ListNode next = node.next;
+        ListNode pre = node;
+        while (next != null) {
+            node.val = next.val;
+            pre = node;
+            node = next;
+            next = next.next;
+        }
+        pre.next = null;
+    }
 
 
 }

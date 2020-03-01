@@ -3,7 +3,6 @@ package com.leo.leetcode.arr;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
 public class T189Test {
 

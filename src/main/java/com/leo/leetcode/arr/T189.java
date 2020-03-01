@@ -50,6 +50,8 @@ public class T189 {
                 pre = temp;
                 count++;
             } while (cur != start);
+
+            start++;
         }
 
     }

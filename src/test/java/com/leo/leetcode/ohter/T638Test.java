@@ -1,11 +1,10 @@
 package com.leo.leetcode.ohter;
 
+import com.leo.leetcode.other.T638;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 public class T638Test {
 

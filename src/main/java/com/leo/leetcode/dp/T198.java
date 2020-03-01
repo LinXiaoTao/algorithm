@@ -45,7 +45,6 @@ public class T198 {
             max = Math.max(a + nums[i], b);
             a = b;
             b = max;
-            i++;
         }
 
         return max;

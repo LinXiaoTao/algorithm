@@ -1,9 +1,8 @@
 package com.leo.leetcode.ohter;
 
+import com.leo.leetcode.other.T804;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class T804Test {
 

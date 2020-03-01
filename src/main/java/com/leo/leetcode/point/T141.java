@@ -1,5 +1,7 @@
 package com.leo.leetcode.point;
 
+import com.leo.leetcode.builtin.ListNode;
+
 /**
  * 141. 环形链表
  * https://leetcode-cn.com/problems/linked-list-cycle/description/
@@ -23,12 +25,23 @@ public class T141 {
 
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
+    public boolean hasCycle1(ListNode head) {
+        if (head == null || head.next == null) return false;
 
-        ListNode(int x) {
-            val = x;
+        ListNode a = head;
+        ListNode b = head;
+
+        while (a.next != null) {
+            a = a.next;
+
+            if (b.next == null || b.next.next == null) break;
+            b = b.next.next;
+
+            if (a.val == b.val) return true;
         }
+
+        return false;
     }
+
+
 }

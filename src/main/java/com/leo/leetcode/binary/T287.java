@@ -39,16 +39,30 @@ public class T287 {
                     count++;
                 }
             }
-            if (count > mid){
+            if (count > mid) {
                 // 重复元素的值 [left,mid]
                 right = mid;
-            }else {
+            } else {
                 // count <= mid
                 // 重复元素的值 [mid + 1,right]
                 left = mid + 1;
             }
         }
         return left;
+    }
+
+    public int findDuplicate2(int[] nums) {
+
+        for (int i = 0; i < nums.length; i++) {
+            int target = Math.abs(nums[i]) - 1;
+            if (nums[target] < 0) {
+                return Math.abs(nums[i]);
+            }
+            nums[target] = nums[target] * -1;
+        }
+
+
+        return -1;
     }
 
 }

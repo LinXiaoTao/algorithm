@@ -1,5 +1,6 @@
 package com.leo.leetcode.ohter;
 
+import com.leo.leetcode.other.T832;
 import org.junit.Assert;
 import org.junit.Test;
 
